@@ -83,7 +83,7 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
    Open telegram and search for "ximdbot", select "START" and enjoy! ([video example](https://streamable.com/tls0aw))
 
-## New episode Telegram notification:
+**New episode Telegram notification**<br>
 
 <img src="https://i.imgur.com/ff6Ineg.jpg" height="700" width="350">
 
