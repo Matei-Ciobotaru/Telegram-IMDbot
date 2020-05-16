@@ -6,7 +6,7 @@ when the respective movie or new series episode is out.
 
 ## Python Libraries
 
-You will require the [python-telegram-bot](https://python-telegram-bot.org/) library to use Telegram and the [IMDbPy](https://pypi.org/project/IMDbPY/) library to query IMDB.com.
+You will require the [python-telegram-bot](https://python-telegram-bot.org/) library to use Telegram and the [IMDbPy](https://pypi.org/project/IMDbPY/) library to query IMDb.com.
 
 ## Telegram Bot
 
@@ -33,9 +33,9 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
   This is the actual inline Telegram bot.
 
-**/database**<br>
+**database**<br>
 
-  This directory is where the database is created at the first script run.
+  The directory where the database is created at the first script run.
 
 **imdbot.service**<br>
 
@@ -45,53 +45,40 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
   1. Clone this repository
 
-    ```bash
-    # cd /opt
-	# git clone https://github.com/Matei-Ciobotaru/Telegram-IMDbot.git
-	````
+    `# cd /opt`
+	`# git clone https://github.com/Matei-Ciobotaru/Telegram-IMDbot.git`
 
   2. Create the python virtual environment
 
-    ```bash 
-    # cd Telegram-IMDbot
-    # python3 -m venv venv
-    ```
+    `# cd Telegram-IMDbot`
+    `# python3 -m venv venv`
 
   3. Activate the virtual env and install the required dependencies
 
-    ```bash
-    # . venv/bin/activate
-    # pip install -r ./requirments.txt
-    ```
+    `# . venv/bin/activate`
+    `# pip install -r ./requirments.txt`
 
   4. Configure your bot details. Replace the "BOT_TOKEN" global variable with your secret Telegram bot token.
 
-    ```bash
-    # vim imdbot.py
-    ```
+    `# vim imdbot.py`
 
   5. Run the script (default log file location is "/var/log/imdbot.log")
 
-    ```bash
-    # chmod 755 ./imdbot.py
-    # ./imdbot.py
-	```
+    `# chmod 755 ./imdbot.py`
+    `# ./imdbot.py`
 
   Optional:
 
   6. Create systemd service using the 'imdbot.service' file:
 
-    ```bash
-    # sudo cp -p ./imdbot.service /lib/systemd/system/imdbot.service
-    # sudo systemctl daemon-reload
-    # sudo systemctl enable imdbot
-	```
+    `# sudo cp -p ./imdbot.service /lib/systemd/system/imdbot.service`
+    `# sudo systemctl daemon-reload`
+    `# sudo systemctl enable imdbot`
 
   7. Start the bot
 
-    ```bash
-    systemctl start imdbot
-    ```
+    `systemctl start imdbot`
+
 ## Use my Telegram IMDbot
 
    Open telegram and search for "ximdbot", select "START", enjoy!
