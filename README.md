@@ -1,4 +1,4 @@
-# Telegram-IMDb
+# Telegram-IMDbot
 Set alerts for your favorite IMDb movies or series.
 
 A Telegram bot which enables the user to search movie or series titles on IMDb.com, set alerts for the chosen result and receive a notification via Telegram
@@ -81,10 +81,9 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
 ## Use my Telegram IMDbot
 
-   Open telegram and search for "ximdbot", select "START", enjoy!
-   
-   [Video example](https://streamable.com/tls0aw)
+   Open telegram and search for "ximdbot", select "START" and enjoy! ([video example](https://streamable.com/tls0aw))
 
-   New episode Telegram notification:
-   <img src="https://i.imgur.com/ff6Ineg.jpg" height="700" width="350">
+## New episode Telegram notification:
+
+<img src="https://i.imgur.com/ff6Ineg.jpg" height="700" width="350">
 
