@@ -18,7 +18,7 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
 * requirements.txt
 
-  This file contains all the python libraries needed to run. Run the below commands to setup a python virtual environment and install the required dependencies.
+  This file contains all the python libraries needed to run the bot.
 
 * utils/db.py 
 
