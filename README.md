@@ -16,28 +16,28 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
 ## Description
 
-**requirements.txt**<br>
+* requirements.txt
 
   This file contains all the python libraries needed to run. Run the below commands to setup a python virtual environment and install the required dependencies.
 
-**utils/db.py**<br>
+* utils/db.py 
 
   This python module is used to perform CREATE/READ/UPDATE/DELETE operations on the bot's database.
   The bot usees the python built in sqlite3 library to create a database used to store the user's titles and release dates.
 
-**utils/movie.py**<br>
+* utils/movie.py
 
   This python module is used to query IMDb.com using the [IMDbPy](https://pypi.org/project/IMDbPY/) library and find the movie or series next episode release date.
 
-**imdbot.py**<br>
+* imdbot.py
 
   This is the actual inline Telegram bot.
 
-**database**<br>
+* database
 
   The directory where the database is created at the first script run.
 
-**imdbot.service**<br>
+* imdbot.service
 
   Systemd service file for the bot.
 
