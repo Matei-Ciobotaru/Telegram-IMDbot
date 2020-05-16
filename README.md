@@ -45,39 +45,39 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
   1. Clone this repository
 
-    `# cd /opt`
-	`# git clone https://github.com/Matei-Ciobotaru/Telegram-IMDbot.git`
+    # cd /opt
+	# git clone https://github.com/Matei-Ciobotaru/Telegram-IMDbot.git
 
   2. Create the python virtual environment
 
-    `# cd Telegram-IMDbot`
-    `# python3 -m venv venv`
+    # cd Telegram-IMDbot
+    # python3 -m venv venv
 
   3. Activate the virtual env and install the required dependencies
 
-    `# . venv/bin/activate`
-    `# pip install -r ./requirments.txt`
+    # . venv/bin/activate
+    # pip install -r ./requirments.txt
 
   4. Configure your bot details. Replace the "BOT_TOKEN" global variable with your secret Telegram bot token.
 
-    `# vim imdbot.py`
+    # vim imdbot.py
 
   5. Run the script (default log file location is "/var/log/imdbot.log")
 
-    `# chmod 755 ./imdbot.py`
-    `# ./imdbot.py`
+    # chmod 755 ./imdbot.py
+    # ./imdbot.py
 
   Optional:
 
   6. Create systemd service using the 'imdbot.service' file:
 
-    `# sudo cp -p ./imdbot.service /lib/systemd/system/imdbot.service`
-    `# sudo systemctl daemon-reload`
-    `# sudo systemctl enable imdbot`
+    # sudo cp -p ./imdbot.service /lib/systemd/system/imdbot.service
+    # sudo systemctl daemon-reload
+    # sudo systemctl enable imdbot
 
   7. Start the bot
 
-    `systemctl start imdbot`
+    systemctl start imdbot
 
 ## Use my Telegram IMDbot
 
