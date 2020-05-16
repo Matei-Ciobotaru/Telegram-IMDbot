@@ -10,7 +10,7 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
 ## Telegram Bot
 
- You will need to create a Telegram bot and edit the python script to add your personal BOT_TOKEN and CHAT_ID.
+ You will need to create a Telegram bot and edit the python script to add your personal bot token.
  Details on how to create a bot [here](https://core.telegram.org/bots#creating-a-new-bot).
  The bot has to be configured as a [inline bot](https://core.telegram.org/bots/inline) with feedback collection enabled.
 
