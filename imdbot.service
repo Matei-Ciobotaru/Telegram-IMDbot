@@ -1,0 +1,10 @@
+[Unit]
+Description=Telegram IMDb alerts bot
+
+[Service]
+User=root
+ExecStart=/opt/Telegram-IMDbot/imdbot.py
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
