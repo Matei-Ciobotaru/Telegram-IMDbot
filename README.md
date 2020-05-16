@@ -58,7 +58,7 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
     # . venv/bin/activate
     # pip install -r ./requirments.txt
 
-  4. Configure your bot details. Replace the "BOT_TOKEN" global variable with your secret Telegram bot token.
+  4. Configure your bot details. Replace the "TOKEN" global variable with your secret Telegram bot token.
 
     # vim imdbot.py
 
