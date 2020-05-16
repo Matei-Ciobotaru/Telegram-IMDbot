@@ -41,7 +41,7 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
   Systemd service file for the bot.
 
-## Setup your personal Telegram IMDBot
+## Setup your personal Telegram IMDbot
 
   1. Clone this repository
 
@@ -77,8 +77,14 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
   7. Start the bot
 
-    systemctl start imdbot
+    # systemctl start imdbot
 
 ## Use my Telegram IMDbot
 
    Open telegram and search for "ximdbot", select "START", enjoy!
+   
+   [Video example](https://streamable.com/tls0aw)
+
+   New episode Telegram notification:
+   <img src="https://i.imgur.com/ff6Ineg.jpg" height="700" width="350">
+
