@@ -83,9 +83,13 @@ You will require the [python-telegram-bot](https://python-telegram-bot.org/) lib
 
 ## Use my Telegram IMDbot
 
-   Open telegram and search for "ximdbot", select "START" and enjoy! ([video example](https://streamable.com/tls0aw))
+   Open telegram and search for "ximdbot", select "START" and enjoy!
+   <a href="http://www.youtube.com/watch?feature=player_embedded&v=_Bq7RveSv9M
+   " target="_blank"><img src="http://img.youtube.com/vi/_Bq7RveSv9M/0.jpg" 
+   alt="Video example" width="240" height="180" border="10" /></a>
+
 
 **New episode Telegram notification**<br>
 
-<img src="https://i.imgur.com/ff6Ineg.jpg" height="700" width="350">
+<img src="https://i.imgur.com/ff6Ineg.jpg" height="650" width="350">
 
