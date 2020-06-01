@@ -217,22 +217,28 @@ class Alert():
         Get next episode ID and release date and update the database
         """
 
-
-        date_regex = r'\d{1,2}\s\w{3}.\s\d{4}'
+        date_regex = r'\d{1,2}\s\w{3}.{0,1}\s\d{4}'
         next_episode_id = current_episode_data.get('next episode')
+
         if next_episode_id:
             next_episode_data = self.imdb_api.get_episode(next_episode_id)
-            next_release = next_episode_data.get('original air date')
-            if next_release and match(date_regex, next_release):
-                release_date = datetime.strptime(next_release, '%d %b. %Y')
+            next_release_date = next_episode_data.get('original air date')
+            if next_release_date and match(date_regex, next_release_date):
+            # next episode with valid release date found, store in database
+                next_release_date = next_release_date.replace(',', '')
+                release_date = datetime.strptime(next_release_date, '%d %b %Y')
             else:
-            # no release date for next episode, check every week
-                next_week = datetime.now() + timedelta(days=7)
-                release_date = next_week.replace(hour=0, minute=0,
-                                                 second=0, microsecond=0)
+            # no release date for next episode, check again next week
+                next_week_date = datetime.now() + timedelta(days=7)
+                release_date = next_week_date.replace(hour=0, minute=0,
+                                                      second=0, microsecond=0)
+                next_episode_id = current_episode_data.getID()
 
             db_values = (next_episode_id, release_date, user_id, title_id)
             self.db_api.update(db_values)
+        else:
+            # no next episode not found, assume series ended and remove alert
+            self.db_api.delete(user_id, title_id)
 
         return next_episode_id
 
@@ -303,7 +309,6 @@ class Alert():
         """
 
         alerts = []
-
         today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
         rows = self.db_api.query_released(today)
 
@@ -312,17 +317,23 @@ class Alert():
                 user_id, title_id, title_episode_id = row[0], row[1], row[2]
                 if title_episode_id:
                     current_episode = self.imdb_api.get_episode(title_episode_id)
+                    current_release = current_episode['original air date'].replace(',', '')
+                    current_release_date = datetime.strptime(current_release, '%d %b %Y')
                     next_episode_id = self._update_episode(user_id, title_id, current_episode)
-                    fields = get_fields(current_episode)
-                    message = 'Episode is out!\n\n' + reply_message(fields)
                     if not next_episode_id:
-                        # add message note
-                        message += '\n<b>* Series has ended, alert disabled *</b>'
-                        # remove series from database
-                        self.db_api.delete(user_id, title_id)
-                    alerts.append((user_id, message))
+                        # no next episode found, disable alert
+                        fields = get_fields(current_episode)
+                        message = 'Series finale episode!' \
+                                  '(alert disabled)\n\n' + reply_message(fields)
+                        alerts.append((user_id, message))
+                    elif current_release_date == today:
+                        # do not notify multiple times for the same episode as some
+                        # episodes are kept pending their next episode release date
+                        fields = get_fields(current_episode)
+                        message = 'Episode is out!!\n\n' + reply_message(fields)
+                        alerts.append((user_id, message))
                 else:
-                    # it's a movie and must be removed from the database
+                    # movie has been release, disable alert
                     title_data = self.imdb_api.get_movie(title_id)
                     fields = get_fields(title_data)
                     movie_details = reply_message(fields)
