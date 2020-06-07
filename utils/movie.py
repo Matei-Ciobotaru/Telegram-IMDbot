@@ -175,7 +175,7 @@ class Alert():
     def _get_episode_release_date(self, user_id, user_name, title_id, title_name):
         """
         Get release date of next episode and update database if not yet released
-	    """
+	"""
 
         # Get all episodes for title from IMDb
         result = self.imdb_api.get_movie_episodes(title_id)
