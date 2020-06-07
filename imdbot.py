@@ -122,7 +122,6 @@ def chosen_result(update, context):
     context.user_data[user_id] = title_id
 
 
-#@run_async
 def imdb_url_button(title_id, message):
     """
     After chosing enable/disable alert create IMDb URL button
